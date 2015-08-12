@@ -11,19 +11,23 @@
 			$(document).ready(function(){
 				$('#nearMe').click(function(){
 					$.ajax({
-							url: "api.php", // Url to which the request is send
-							type: "GET",             // Type of request to be send, called as method
-							dataType: "json",
-							data: {data:'accounts'}, // Data sent to server, a set of key/value pairs (i.e. form fields and values)
-							contentType: 'application/json',       // The content type used when sending data to the server.
-							success: function(response)   // A function to be called if request succeeds
-							{		
-								alert(JSON.stringify(response));
-							},
-							error: function(err){
-								alert(JSON.stringify(err));
-							}
+							alert("accounts clicked");
 						});
+					
+				)};
+
+				$('#search').click(function(){
+					$.ajax({
+							alert("contacts clicked");
+						});
+					
+				)};
+
+				$('#about').click(function(){
+					$.ajax({
+							alert("employees clicked");
+						});
+					
 				)};
 			});
 		</script>
