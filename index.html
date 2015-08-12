@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>ProAdmin</title>
+        <meta name="viewport" content="initial-scale=1.0; maximum-scale=1.0; minimum-scale=1.0; user-scalable=no;" />
+
+    	<script src="js/libs/jquery-1.7.1.js"></script>
+        <link rel="stylesheet" href="assets/styles.css" type="text/css" charset="utf-8">
+        <script type="text/javascript">
+			$(document).ready(function(){
+				$('#nearMe').click(function(){
+					$.ajax({
+							url: "api.php", // Url to which the request is send
+							type: "GET",             // Type of request to be send, called as method
+							dataType: "json",
+							data: {data:'accounts'}, // Data sent to server, a set of key/value pairs (i.e. form fields and values)
+							contentType: 'application/json',       // The content type used when sending data to the server.
+							success: function(response)   // A function to be called if request succeeds
+							{		
+								alert(JSON.stringify(response));
+							},
+							error: function(err){
+								alert(JSON.stringify(err));
+							}
+						});
+				)};
+			});
+		</script>
+        
+    </head>
+
+    <body>
+		<div id="defaultView">
+			<h2>Data Finder</h2>
+			<div><a id="nearMe" href="#">Accounts</a></div>
+			<div><a id="search" href="#">Contacts</a></div>
+			<div><a id="about" href="#">Employees</a></div>  
+		</div>
+	</body>
+</html>    
